@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dal</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:050,400,600,700" rel="stylesheet">
+    <link rel='stylesheet' href='css/custom.css'>
+    <link rel='stylesheet' href='css/contact.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="main.js"></script>  switched to contact.js to avoid errors in console -->
+    <script src="js/contact.js"></script>
+  </head>
+  <body>
+    <header>
+      <img class='logo' src='img/logo.png' alt='Dal' width="40px" height="40px">
+      <span class='logo-text'>DALHOUSIE<br/><span class='logo-text-small'>Schedule Builder</span></span>
+      <img class='menu' src='img/menu.png' alt='open'>
+      <nav>
+        <div id='nav-container'>
+          <span class='nav-item'><a href='index.html'>Build</a></span>
+          <span class='nav-item selected'><a href='contact.html'>Contact</a></span>
+        </div>
+      </nav>
+    </header>
+    <!-- <div class='notif'>
+      <span>Email Sent!</span>
+    </div> -->
+    <div class="message-container">
+      <h1>Contact Form</h1>
+      <label>Enter your name:</label><input type='text' placeholder='name' class='mail-field name'><br>
+      <label>Enter your email:</label><input type='text' placeholder='example@email.com' class='mail-field email'><br>
+      <label>Enter your message:</label><br><textarea class='mail-body'></textarea><br>
+      <button class='send'><img src='img/mail.png' id='mail-icon'><span>SEND EMAIL</span></button>
+      <span class='response-message'>The email sent successfully!</span>
+
+    </div>
+    <div class="footer">
+      <p>Ananya Nigam</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SRMLOGY</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:050,400,600,700" rel="stylesheet">
+    <link rel='stylesheet' href='css/custom.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/apihandler.js"></script>
+    <script src="js/schedule.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <img class='logo' src='https://yt3.ggpht.com/a-/AAuE7mC4AhWqURpaVDqtXHlMJtxYKa6aB8-VgIcQmQ=s900-mo-c-c0xffffffff-rj-k-no' alt='Dal' width="40px" height="40px">
+      <span class='logo-text'>SRMLOGY<br/><span class='logo-text-small'>Class Schedule Manager</span></span>
+      <img class='menu' src='img/menu.png' alt='open'>
+      <nav>
+        <div id='nav-container'>
+          <span class='nav-item selected'><a href='index.html'>Build</a></span>
+          <!-- <span class='nav-item'><a href='classes.html'>View Classes</a></span> Will add this page in the future -->
+          <span class='nav-item'><a href='contact.html'>Contact</a></span>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="semester-selector">
+        <a class="sem-item selected">ODD SEM</a>
+        <a class="sem-item">EVEN SEM</a>
+        <div class='sched_menu'>
+          <div class='tool-tip-container'>
+            <img src='img/clear.svg'>
+            <span class='tool-tip-text'>Clear All Selected Classes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-container">
+        <div class="course-table-header">
+          <span class="course-table-title">SELECT YOUR COURSES</span>
+        </div>
+          <select id="course-list">
+            <option value="" selected="">-Choose a Subject-</option>
+            <option value="ACSC">Software Engineering and Project Management</option>
+            <option value="ANAT">Probability and Queuing Theory</option>
+            <option value="ARTC">Operating System</option>
+            <option value="ARBC">Social Engineering</option>
+            <option value="ARCH">Computer Networks</option>
+            <option value="ASSC">Advanced Programming</option>
+            <option value="BIOC">Management Principles</option>
+            
+          </select>
+          <input type="text" name="search" id="search" placeholder="Search for classes...">
+        <div id="course-table-container">
+
+          <div id="course-table">
+            <span id="no-selected">No subject selected</span>
+            <!-- <div class="course-header">
+                <span class="course-code">CSCI 1010</span>
+                <span class="course-title">Computer Science 2</span>
+                <img id="course-dropdown-icon" src="img/down.png">
+            </div>
+            <div class="course-data">
+              <span class="course-type">Lec 01 (<b class="fill-low">33%</b>)</span>
+              <img id="course-add-btn" src="img/add_outline.png">
+              <div class="time-info-container">
+                <div class="time-info">
+                  <span class="course-days">MON, WED</span>
+                  <span class="course-times">08:35-09:25</span>
+                </div>
+                <div class="time-info">
+                  <span class="course-days">MON</span>
+                  <span class="course-times">08:35-09:25</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-data">
+              <span class="course-type">Lec 01 (<b class="fill-med">66%</b>)</span>
+              <img id="course-add-btn" src="img/add_outline.png">
+              <div class="time-info-container">
+                <div class="time-info">
+                  <span class="course-days">MON, WED, FRI</span>
+                  <span class="course-times">08:35am - 09:25am</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-data">
+              <span class="course-type">Lec 03 (<b class="fill-high">FULL</b>)</span>
+              <img id="course-add-btn" src="img/add_disabled.png">
+              <div class="time-info-container">
+                <div class="time-info">
+                  <span class="course-days">MON, WED, FRI</span>
+                  <span class="course-times">08:35am - 09:25am</span>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="schedule">
+        <div class="schedule-notif neutral">
+          <img src='img/block.svg'>
+          <span>Time conflict with <em>CSCI 1110 Lec</em></span>
+        </div>
+        <div class="schedule-container">
+          <div class="timeline">
+            <ul>
+              <li><span>08:05</span></li>
+              <li><span>08:35</span></li>
+              <li><span>09:05</span></li>
+              <li><span>09:35</span></li>
+              <li><span>10:05</span></li>
+              <li><span>10:35</span></li>
+              <li><span>11:05</span></li>
+              <li><span>11:35</span></li>
+              <li><span>12:05</span></li>
+              <li><span>12:35</span></li>
+              <li><span>01:05</span></li>
+              <li><span>01:35</span></li>
+              <li><span>02:05</span></li>
+              <li><span>02:35</span></li>
+              <li><span>03:05</span></li>
+              <li><span>03:35</span></li>
+              <li><span>04:05</span></li>
+              <li><span>04:35</span></li>
+              <li><span>05:05</span></li>
+              <li><span>05:35</span></li>
+              <li><span>06:05</span></li>
+              <li><span>06:35</span></li>
+              <li><span>07:05</span></li>
+              <li><span>07:35</span></li>
+              <li><span>08:05</span></li>
+              <li><span>08:35</span></li>
+              <li><span>09:05</span></li>
+              <li><span>09:35</span></li>
+              <li><span>10:05</span></li>
+              <li><span>10:35</span></li>
+              <li><span>11:05</span></li>
+            </ul>
+          </div>
+          <div class="courses-full">
+            <ul>
+              <li class="courses-group">
+              <div class="day-header"><span>Monday</span></div>
+        				<ul>
+                  <!-- Classes Here -->
+                </ul>
+              </li>
+              <li class="courses-group">
+              <div class="day-header"><span>Tuesday</span></div>
+        				<ul>
+        					<!-- Classes Here -->
+                </ul>
+              </li>
+              <li class="courses-group">
+              <div class="day-header"><span>Wednesday</span></div>
+                <ul>
+                  <!-- Classes Here -->
+                </ul>
+              </li>
+              <li class="courses-group">
+              <div class="day-header"><span>Thursday</span></div>
+                <ul>
+                  <!-- Classes Here -->
+                </ul>
+              </li>
+              <li class="courses-group">
+              <div class="day-header"><span>Friday</span></div>
+                <ul>
+                  <!-- Classes Here -->
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-crns">
+        <div class="course-table-header">
+          <span class="course-table-title">CURRENT SELECTED CRN’S</span>
+          <div class='tool-tip-container'>
+            <img src='img/reload.svg'>
+            <span class='tool-tip-text'>Refresh Selected CRN's</span>
+          </div>
+        </div>
+        <span id="CRN-fall-head">ODD SEM</span>
+        <span class='CRN-input'><input type="text" name="fall" id="fall" readonly></span>
+        <span id="CRN-winter-head">EVEN SEM</span>
+        <span class='CRN-input'><input type="text" name="winter" id="winter" readonly></span>
+      </div>
+      <div class="footer">
+        <p>Mackenzie Boudreau &#64; 2017</p>
+        <a href="https://github.com/mackboudreau/DalhousieScheduleBuilder"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a>
+      </div>
+    </div>
+  </body>
+
+</html>
